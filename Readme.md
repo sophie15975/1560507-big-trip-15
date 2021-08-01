@@ -1,7 +1,7 @@
 # Проект «Большое путешествие»
 
-* Студент: [Sophie Sophievna](https://up.htmlacademy.ru/ecmascript/15/user/1560507).
-* Наставник: `Неизвестно`.
+* Студент: [Мария](https://up.htmlacademy.ru/ecmascript/15/user/1560507).
+* Наставник: `Максим Волков`.
 
 ---
 
