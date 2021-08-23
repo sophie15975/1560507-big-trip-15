@@ -16,6 +16,5 @@
     "node": "12"
   },
   "dependencies": {
-    "webpack": "^4.44.2"
   }
 }
