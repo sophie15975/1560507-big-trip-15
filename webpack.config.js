@@ -7,8 +7,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'source-map',
+  mode: "development",
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
-    watchContentBase: true,
+    static:{
+      directory:path.join(__dirname, 'public'),
+    },
+    watchFiles:"true"
   }
 };
