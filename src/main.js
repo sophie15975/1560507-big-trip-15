@@ -34,8 +34,7 @@ originalPOintData.forEach((element) => render(points, parseHtml(pointTemplate(
     ...element,
     icon:typeToIcon(element.type),
   },
-  ))));
-
+))));
 
 render(trip, parseHtml(titleTemplate));
 render(trip, parseHtml(formTemplate));
