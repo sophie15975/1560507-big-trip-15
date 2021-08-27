@@ -18,8 +18,6 @@ import {template as totalSumTemplate} from './view/total-sum';
 import {point15} from './mock/point15';
 import {typeToIcon} from './lib/type-to-icon';
 
-
-
 const root =  document.querySelector('.root');
 const header = parseHtml(headerTemplate);
 const tripMain = header.querySelector('.trip-main');
