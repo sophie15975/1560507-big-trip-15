@@ -1,27 +1,15 @@
-import { parseHtml } from '../lib/parse-html';
+
+import { Abstract } from './abstract';
 
 const template = () => `<h2 class="visually-hidden">Trip events</h2>
 `;
-export class Title{
-  constructor(data){
-    this._data = data;
-    this._element = null;
+export class Title extends Abstract{
+  constructor(){
+    super();
   }
 
   getTemplate(){
     return template();
-  }
-
-  getElement(){
-    if (this._element === null){
-      this._element = parseHtml(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement(){
-    this._element = null;
   }
 }
 
