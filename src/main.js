@@ -2,10 +2,10 @@ import {render} from './lib/render.js';
 import {parseHtml} from './lib/parse-html.js';
 import {template as mainTemplate} from './view/app';
 import {template as headerTemplate} from './view/header';
-import {template as formTemplate} from './view/form';
+import {Form} from './view/form';
 import {template as pointsTemplate} from './view/points';
-import {template as titleTemplate} from './view/hidden-title';
-import {template as pointTemplate} from './view/point';
+import {Title} from './view/hidden-title';
+import {Point} from './view/point';
 import {template as travelInfoTemplate} from './view/travel-info';
 import {template as tripControlsTemplate} from './view/trip-controls';
 import {template as buttonTemplate} from './view/button';
@@ -29,20 +29,23 @@ const travelInfo= parseHtml(travelInfoTemplate);
 
 const originalPOintData = point15();
 render(points, parseHtml(formEditingTemplate));
-originalPOintData.forEach((element) => render(points, parseHtml(pointTemplate(
-  {
+
+
+originalPOintData.forEach((element) => render(
+  points,
+  new Point({
     ...element,
     icon:typeToIcon(element.type),
-  },
-))));
+  }).getElement()));
 
-render(trip, parseHtml(titleTemplate));
-render(trip, parseHtml(formTemplate));
+
+/*+*/render(trip, new Title().getElement());
+/*+*/render(trip, new Form().getElement());
 render(trip, points);
 render(travelInfo, parseHtml(summaryTemplate));
 render(travelInfo, parseHtml(totalSumTemplate));
-render(tripMain, travelInfo );
-render(tripControls, parseHtml(menuTemplate(Routs.TABLE)));
+render(tripMain, travelInfo);
+/*+*/ render(tripControls, parseHtml(menuTemplate(Routs.TABLE)));
 render(tripControls, parseHtml(filtersTemplate(FilterBy.FUTURE)));
 render(tripMain,tripControls);
 render(tripMain, parseHtml(buttonTemplate));

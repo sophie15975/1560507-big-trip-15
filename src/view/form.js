@@ -1,4 +1,5 @@
-export const template = `<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
+import { parseHtml } from '../lib/parse-html';
+const template = () =>`<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
       <div class="trip-sort__item  trip-sort__item--day">
         <input id="sort-day" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-day" checked>
         <label class="trip-sort__btn" for="sort-day">Day</label>
@@ -24,3 +25,21 @@ export const template = `<form class="trip-events__trip-sort  trip-sort" action=
         <label class="trip-sort__btn" for="sort-offer">Offers</label>
       </div>
     </form>`;
+
+export class Form{
+
+  getTemplate(){
+    return template();
+  }
+
+  getElement(){
+    if (this._element === null || typeof this._element === 'undefined'){
+      this._element = parseHtml(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement(){
+    this._element = null;
+  }
+}
