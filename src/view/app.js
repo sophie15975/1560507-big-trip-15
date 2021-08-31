@@ -1,3 +1,5 @@
+import { Abstract } from "./abstract";
+
 export const template = `<main class="page-body__page-main  page-main">
 <div class="page-body__container">
   <section class="trip-events">
@@ -8,7 +10,7 @@ export const template = `<main class="page-body__page-main  page-main">
 </main>
 `;
 
-export class App{
+export class App extends Abstract{
 
   getTemplate(){
     return template;

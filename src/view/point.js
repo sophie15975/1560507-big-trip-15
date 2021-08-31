@@ -1,4 +1,4 @@
-import { parseHtml } from '../lib/parse-html';
+
 import { Abstract } from './abstract';
 
 const template = ({icon, type, destination}) => `<div class="event">

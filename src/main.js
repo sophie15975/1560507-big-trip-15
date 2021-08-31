@@ -1,9 +1,9 @@
 import {render} from './lib/render.js';
 import {parseHtml} from './lib/parse-html.js';
-import {template as mainTemplate} from './view/app';
-import {template as headerTemplate} from './view/header';
+import {App} from './view/app';
+import { Header} from './view/header';
 import {Form} from './view/form';
-import {template as pointsTemplate} from './view/points';
+import {Points} from './view/points';
 import {Title} from './view/hidden-title';
 import {Point} from './view/point';
 import {template as travelInfoTemplate} from './view/travel-info';
@@ -19,11 +19,11 @@ import {point15} from './mock/point15';
 import {typeToIcon} from './lib/type-to-icon';
 
 const root =  document.querySelector('.root');
-const header = parseHtml(headerTemplate);
+const header = new Header().getElement();
 const tripMain = header.querySelector('.trip-main');
-const main =  parseHtml(mainTemplate);
+const main = new App().getElement();
 const trip = main.querySelector('.trip-events');
-const points = parseHtml(pointsTemplate);
+const points = new Points().getElement();
 const tripControls = parseHtml(tripControlsTemplate);
 const travelInfo= parseHtml(travelInfoTemplate);
 

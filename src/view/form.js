@@ -1,4 +1,5 @@
 import { parseHtml } from '../lib/parse-html';
+import { Abstract } from './abstract';
 const template = () =>`<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
       <div class="trip-sort__item  trip-sort__item--day">
         <input id="sort-day" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-day" checked>
@@ -26,20 +27,9 @@ const template = () =>`<form class="trip-events__trip-sort  trip-sort" action="#
       </div>
     </form>`;
 
-export class Form{
+export class Form extends Abstract{
 
   getTemplate(){
     return template();
-  }
-
-  getElement(){
-    if (this._element === null || typeof this._element === 'undefined'){
-      this._element = parseHtml(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement(){
-    this._element = null;
   }
 }
